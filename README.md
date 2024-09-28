@@ -35,5 +35,26 @@ pause
 # How to add config data.
 First, run the bot one time, this will make it generate a `config.json`, inside there add all the data from the `requirements` above.
 
+# Hosting
+You have 2 options:
+### Self hosting
+You can run the bot locally on your machine, this makes you to:
+- Keep your machine up and running 24/7 *(bad)*
+- Use your own resources *(also bad, even tho it does not consume a lot)*
+### Online hosting
+Use a hosting service to run the bot for you. The pro/contra depend on the hosting you choose, overall hosting online can provide:
+- 24/7 upkeep
+- Graph related to RAM/CPU usage
+- File system & backups
+
+# Reccomended hosting
+For free hosting as well as paid, the best option I have found is **Pella** - https://www.pella.app
+
+Upsides:
+- Free plan
+- Supports running of Java bots (something most discord host providers do not have, also the very thing this project is)
+- Excellent prices for Paid plans
+- Simple, easy to use interface
+
 # Got any issues?
 Join my discord over at https://discord.gg/MYK3zTSJkY and let me know! I can help with anything related to: setting it up, hosting question or anything code-wise :)
