@@ -1,17 +1,11 @@
 Non-Commercial Use License
-Version 1.0
+Version 1.1
 
 Terms and Conditions for Non-Commercial Use
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, merge, publish, and distribute the Software, subject to the following conditions:
 
 Non-Commercial Use:
-The Software is provided for non-commercial purposes only. You may not use the Software, either in its original form or as a modified version, for commercial purposes, including but not limited to:
-
-Selling the Software or derivative works.
-Using the Software or derivative works as part of a product or service intended for commercial advantage or monetary compensation.
-Integrating the Software into any commercial product.
-Attribution:
-You must give appropriate credit by including the original author's name, a link to the original repository, and a copy of this license in any copies or substantial portions of the Software that you distribute or modify.
+You may not resell the Software, either in its original form or as a modified version, for commercial purposes.
 
 Derivative Works:
 You are allowed to create derivative works based on the Software, but those works must also be used and distributed for non-commercial purposes only, and must include a reference to this license.
