@@ -54,6 +54,29 @@ public class DiscordUtils {
     // CACHE
     private List<PayPalData> cachedPayPalData;
 
+    // AUTO
+    private List<String> autoMessages = Arrays.asList(
+            "how do i verify",
+            "how to verify",
+            "where to verify",
+            "where do i verify",
+            "how verify",
+            "how do i get customer role",
+            "how do i get verified",
+            "where can i verify",
+            "i need verify",
+            "i need to be verified",
+            "how i can access to customer role",
+            "access customer role",
+            "access to the customer role",
+            "acces customer role",
+            "acess customer role",
+            "how to get customer role",
+            "where can i get support",
+            "how do i get support",
+            "how can i get support"
+    );
+
     public DiscordUtils(Main main, PayPalUtils payPalUtils, String token, DbManager dbManager) {
         this.main = main;
         this.payPalUtils = payPalUtils;
@@ -67,8 +90,11 @@ public class DiscordUtils {
 
         DiscordApi api = new DiscordApiBuilder()
                 .setToken(token)
+                .setIntents(Intent.GUILD_MESSAGES, Intent.MESSAGE_CONTENT)
                 .login()
                 .join();
+
+        api.setReconnectDelay(attempt -> attempt <= 5 ? (int) Duration.ofSeconds(10).toMillis() : (int) Duration.ofMinutes(1).toMillis());
 
         api.updateActivity(ActivityType.WATCHING, "You.");
         api.updateStatus(UserStatus.IDLE);
@@ -95,6 +121,15 @@ public class DiscordUtils {
                 .join();
 
         api.addSlashCommandCreateListener(this::onSlashCommandInteraction);
+
+        api.addMessageCreateListener(event -> {
+            for (String string : autoMessages){
+                String message = event.getMessageContent();
+                if (message.toLowerCase().contains(string)){
+                    event.getMessage().reply(HELP_MESSAGE);
+                }
+            }
+        });
 
         loadMessages();
     }
